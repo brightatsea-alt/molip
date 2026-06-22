@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>블로그 소재 트렌드 키워드 보드 | 항목별 Top 20</title>
+<meta name="description" content="뉴스·시사, 커뮤니티, 쇼핑·소비, 연예·동영상·IT 카테고리별 실시간 트렌드 키워드 Top 20과 주요 한국 웹사이트 실시간 소스 바로가기. 블로그 소재 발굴용 대시보드.">
+<style>
+  :root{
+    --bg:#0f1115; --card:#171a21; --card2:#1d212b; --line:#2a2f3a;
+    --txt:#e8eaed; --sub:#9aa3b2; --accent:#3ea6ff; --chip:#222732;
+    --news:#ff6b6b; --comm:#ffd166; --shop:#06d6a0; --ent:#b692ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    line-height:1.55;-webkit-text-size-adjust:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:20px 16px 60px}
+  header h1{font-size:22px;margin:0 0 6px;font-weight:800;letter-spacing:-.3px}
+  header p{margin:0;color:var(--sub);font-size:13px}
+  .meta{margin-top:10px;font-size:12px;color:var(--sub)}
+  .meta b{color:var(--accent)}
+  .howto{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin:16px 0 8px;font-size:13px;color:var(--sub)}
+  .howto b{color:var(--txt)}
+  .nav{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:0;z-index:5;
+    background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .nav a{font-size:13px;text-decoration:none;color:var(--txt);background:var(--chip);
+    border:1px solid var(--line);padding:7px 12px;border-radius:999px;font-weight:600}
+  .nav a:hover{border-color:var(--accent)}
+  section{margin-top:26px;background:var(--card);border:1px solid var(--line);
+    border-radius:16px;padding:18px 16px;scroll-margin-top:64px}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+  .dot{width:12px;height:12px;border-radius:50%}
+  .sec-head h2{font-size:18px;margin:0;font-weight:800}
+  .sec-sub{color:var(--sub);font-size:12px;margin:2px 0 14px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--card2);
+    border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13.5px}
+  .chip .rank{font-size:11px;color:var(--sub);min-width:18px;text-align:right;font-variant-numeric:tabular-nums}
+  .chip a{color:var(--txt);text-decoration:none;font-weight:600}
+  .chip a:hover{color:var(--accent)}
+  .chip .b{font-size:10.5px;color:var(--sub);text-decoration:none;border:1px solid var(--line);
+    border-radius:6px;padding:1px 5px}
+  .chip .b:hover{color:var(--accent);border-color:var(--accent)}
+  .src{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+  .src h3{font-size:12px;color:var(--sub);margin:0 0 8px;font-weight:700;letter-spacing:.3px}
+  .src-links{display:flex;flex-wrap:wrap;gap:7px}
+  .src-links a{font-size:12px;text-decoration:none;color:var(--sub);
+    background:transparent;border:1px solid var(--line);border-radius:8px;padding:5px 9px}
+  .src-links a:hover{color:var(--accent);border-color:var(--accent)}
+  footer{margin-top:34px;color:var(--sub);font-size:11.5px;text-align:center;line-height:1.7}
+  @media(max-width:560px){header h1{font-size:19px}.chip{font-size:13px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>📊 블로그 소재 트렌드 키워드 보드</h1>
+  <p>주요 한국 웹사이트를 분석한 항목별 Top 20 키워드 + 실시간 소스 바로가기</p>
+  <div class="meta">기준 시각 <b id="genDate">2026-06-22 (월) 21:40 KST</b> · 키워드를 누르면 네이버 검색, <span style="border:1px solid var(--line);border-radius:5px;padding:0 4px">블</span>을 누르면 블로그 경쟁도 확인</div>
+</header>
+
+<div class="howto">
+  <b>사용법</b> — 아래는 오늘 시점의 스냅샷입니다. 키워드 칩을 눌러 검색량·이슈를 확인하고, <b>각 섹션 하단의 "실시간 소스 바로가기"</b>로 들어가면 네이버·구글·유튜브·커뮤니티의 실시간 인기 키워드를 직접 볼 수 있습니다. 페이지를 다시 요청하면 최신 키워드로 갱신됩니다.
+</div>
+
+<nav class="nav">
+  <a href="#news">📰 뉴스·시사</a>
+  <a href="#comm">🔥 커뮤니티</a>
+  <a href="#shop">🛍️ 쇼핑·소비</a>
+  <a href="#ent">🎬 연예·동영상·IT</a>
+</nav>
+
+<!-- ============ 뉴스·시사 ============ -->
+<section id="news">
+  <div class="sec-head"><span class="dot" style="background:var(--news)"></span><h2>📰 뉴스·시사 이슈 Top 20</h2></div>
+  <div class="sec-sub">네이버·다음·구글뉴스 / 연합·KBS·SBS·MBC·조선·중앙·동아·한경·매경 종합</div>
+  <div class="chips" id="c-news"></div>
+  <div class="src">
+    <h3>실시간 소스 바로가기</h3>
+    <div class="src-links">
+      <a href="https://news.naver.com/main/ranking/popularDay.naver" target="_blank">네이버 랭킹뉴스</a>
+      <a href="https://news.daum.net/ranking/popular" target="_blank">다음 랭킹뉴스</a>
+      <a href="https://news.google.com/home?hl=ko&gl=KR" target="_blank">구글 뉴스 KR</a>
+      <a href="https://www.yna.co.kr/theme/mostviewed/index" target="_blank">연합 많이 본</a>
+      <a href="https://trends.google.co.kr/trending?geo=KR" target="_blank">구글 트렌드 실시간</a>
+      <a href="https://www.signal.bz/" target="_blank">실시간 검색어(시그널)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 커뮤니티 ============ -->
+<section id="comm">
+  <div class="sec-head"><span class="dot" style="background:var(--comm)"></span><h2>🔥 커뮤니티 화제 Top 20</h2></div>
+  <div class="sec-sub">디시·FM코리아·더쿠·클리앙·루리웹·뽐뿌·보배드림·MLBPARK·아카라이브 종합</div>
+  <div class="chips" id="c-comm"></div>
+  <div class="src">
+    <h3>실시간 소스 바로가기</h3>
+    <div class="src-links">
+      <a href="https://www.dcinside.com/" target="_blank">디시 실시간베스트</a>
+      <a href="https://www.fmkorea.com/best" target="_blank">FM코리아 베스트</a>
+      <a href="https://theqoo.net/hot" target="_blank">더쿠 핫</a>
+      <a href="https://www.clien.net/service/board/park" target="_blank">클리앙</a>
+      <a href="https://bbs.ruliweb.com/" target="_blank">루리웹</a>
+      <a href="https://www.ppomppu.co.kr/" target="_blank">뽐뿌</a>
+      <a href="https://www.bobaedream.co.kr/" target="_blank">보배드림</a>
+      <a href="https://mlbpark.donga.com/" target="_blank">MLBPARK</a>
+      <a href="https://arca.live/" target="_blank">아카라이브</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 쇼핑·소비 ============ -->
+<section id="shop">
+  <div class="sec-head"><span class="dot" style="background:var(--shop)"></span><h2>🛍️ 쇼핑·소비 트렌드 Top 20</h2></div>
+  <div class="sec-sub">네이버쇼핑·쿠팡·무신사·올리브영·편의점 / 네이버 데이터랩 소비 트렌드 반영</div>
+  <div class="chips" id="c-shop"></div>
+  <div class="src">
+    <h3>실시간 소스 바로가기</h3>
+    <div class="src-links">
+      <a href="https://datalab.naver.com/shoppingInsight/sCategory.naver" target="_blank">네이버 데이터랩 쇼핑인사이트</a>
+      <a href="https://datalab.naver.com/keyword/realtimeList.naver" target="_blank">네이버 데이터랩</a>
+      <a href="https://www.coupang.com/np/campaigns/82" target="_blank">쿠팡 베스트</a>
+      <a href="https://www.musinsa.com/ranking/best" target="_blank">무신사 랭킹</a>
+      <a href="https://www.oliveyoung.co.kr/store/main/getBestList.do" target="_blank">올리브영 베스트</a>
+      <a href="https://ohou.se/" target="_blank">오늘의집</a>
+      <a href="https://trends.google.co.kr/trending?geo=KR&category=18" target="_blank">구글 쇼핑 트렌드</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 연예·동영상·IT ============ -->
+<section id="ent">
+  <div class="sec-head"><span class="dot" style="background:var(--ent)"></span><h2>🎬 연예·동영상·IT Top 20</h2></div>
+  <div class="sec-sub">유튜브·넷플릭스·티빙 / 연예뉴스 + IT·AI·신제품 트렌드 종합</div>
+  <div class="chips" id="c-ent"></div>
+  <div class="src">
+    <h3>실시간 소스 바로가기</h3>
+    <div class="src-links">
+      <a href="https://www.youtube.com/feed/trending" target="_blank">유튜브 인기 급상승</a>
+      <a href="https://flixpatrol.com/top10/netflix/south-korea/" target="_blank">넷플릭스 KR Top10</a>
+      <a href="https://entertain.naver.com/ranking" target="_blank">네이버 연예 랭킹</a>
+      <a href="https://www.genie.co.kr/chart/top200" target="_blank">음원 차트</a>
+      <a href="https://trends.google.co.kr/trending?geo=KR&category=4" target="_blank">구글 연예 트렌드</a>
+      <a href="https://www.itcle.com/" target="_blank">IT 뉴스</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  블로그 소재 발굴용 트렌드 키워드 보드 · 키워드는 네이버 검색 API 기반 스냅샷이며, 실시간 변동은 각 섹션의 "실시간 소스 바로가기"에서 확인하세요.<br>
+  GitHub Pages 호스팅 · 갱신을 원하면 Claude에게 "키워드 보드 업데이트"라고 요청하세요.
+</footer>
+</div>
+
+<script>
+// ===== 항목별 Top 20 키워드 (2026-06-22 스냅샷) =====
+const data = {
+  news: ["호르무즈 한국 선박","미국 이란 종전 MOU","SK하이닉스 시총 1위","삼성전자 코스피","이재명 청와대 인사","박성재 1심 선고","12·3 비상계엄","김건희 수사 청탁","이화영 위증","탈모약 건보 적용","월드컵 남아공전","홍명보 대표팀 몬테레이","챗GPT 프로 요금제","서울시장 재선거","6·3 지방선거","태풍 메칼라","수출입동향","스타벅스 조기종료","광주 여고생 사건","무알콜 맥주 응원"],
+  comm: ["참교육 숏폼","평양 카카오맵 노출","사나 의상 논란","김무열 존 시나","테슬라 첫 시승 후기","배용준 실물 목격","무알콜 맥주 거리응원","12억 다리보험 여배우","최준용 임화수","청년정치 논란","대성 허영지 열애설","워킹패드 홈트","키캡 커스텀","무지출 챌린지","짠테크 앱테크","토이스토리5 후기","흑백요리사 백종원","C커머스 알리테무","맥북 네오 가격","갤럭시 폴드8 가격"],
+  shop: ["무신사 추천템","무신사 스탠다드 특가","무알콜 맥주","편의점 도시락","앱테크·짠테크","무지출 챌린지","C커머스(알리·테무)","아누아 어성초","워킹패드","캡슐커피 할리스","스토케 유모차","와인 위크","가성비 PB 심플러스","K팝 콘서트 여행상품","커스텀 키캡","레이어드 컷","여름 양산·우산","닥터자르트","다이어트 식단","겸용 멀티상품"],
+  ent: ["참교육 넷플릭스 1위","중증외상센터 시즌2","남편들 넷플릭스","김무열 코리안 존시나","트와이스 사나","배용준 싱가포르","송혜교 신작","문채원 결혼","이효리 연애전쟁","임영웅 산골총각","故 옥희 별세","흑백요리사","연애실험실","토이스토리5","챗GPT 프로 29만원","AI 메모리 쇼크","갤럭시 Z플립8/폴드8","맥북 네오 599달러","애플 신제품 가격인상","LG 워시콤보"]
+};
+
+function render(id, arr){
+  const box = document.getElementById(id);
+  box.innerHTML = arr.map((k,i)=>{
+    const q = encodeURIComponent(k);
+    return `<span class="chip"><span class="rank">${i+1}</span>`+
+      `<a href="https://search.naver.com/search.naver?query=${q}" target="_blank">${k}</a>`+
+      `<a class="b" href="https://search.naver.com/search.naver?where=blog&query=${q}" target="_blank">블</a></span>`;
+  }).join("");
+}
+render("c-news", data.news);
+render("c-comm", data.comm);
+render("c-shop", data.shop);
+render("c-ent", data.ent);
+</script>
+</body>
+</html>
