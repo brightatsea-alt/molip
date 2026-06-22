@@ -11,6 +11,7 @@
     --txt:#e8eaed; --sub:#9aa3b2; --accent:#3ea6ff; --chip:#222732;
     --news:#ff6b6b; --comm:#ffd166; --shop:#06d6a0; --ent:#b692ff;
     --age:#4dd0e1; --office:#f78c6b; --desk:#7ee787; --mag:#ff9ec7;
+    --skill:#ffb86c; --software:#8be9fd; --acc:#a3e635; --coupang:#ff7a45;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);
@@ -97,9 +98,13 @@
   <a href="#news">📰 뉴스·시사</a>
   <a href="#comm">🔥 커뮤니티</a>
   <a href="#shop">🛍️ 쇼핑·소비</a>
+  <a href="#coupang">🛒 쿠팡 Top20</a>
   <a href="#ent">🎬 연예·동영상·IT</a>
   <a href="#office">💼 직장인</a>
+  <a href="#skill">🧭 처세·리더십</a>
+  <a href="#software">🧰 직장인 SW</a>
   <a href="#desk">🖥️ 데스크테리어</a>
+  <a href="#acc">🖱️ 컴퓨터 악세사리</a>
   <a href="#age">👥 연령대별</a>
   <a href="#mag">📚 잡지 TopNews</a>
 </nav>
@@ -148,6 +153,17 @@
   </div></div>
 </section>
 
+<section id="coupang">
+  <div class="sec-head"><span class="dot" style="background:var(--coupang)"></span><h2>🛒 쿠팡 인기 품목 Top 20</h2></div>
+  <div class="sec-sub">시즌·생활 베스트셀러 중심 · 품목을 누르면 쿠팡 검색으로 이동</div>
+  <div class="chips" id="c-coupang"></div>
+  <div class="src"><h3>실시간 소스 바로가기</h3><div class="src-links">
+    <a href="https://www.coupang.com/np/campaigns/82" target="_blank">쿠팡 베스트</a>
+    <a href="https://www.coupang.com/np/categories/393760" target="_blank">쿠팡 골드박스</a>
+    <a href="https://www.coupang.com/np/campaigns/82/components/194176" target="_blank">쿠팡 카테고리 베스트</a>
+  </div></div>
+</section>
+
 <section id="ent">
   <div class="sec-head"><span class="dot" style="background:var(--ent)"></span><h2>🎬 연예·동영상·IT Top 20</h2></div>
   <div class="sec-sub">유튜브·넷플릭스·티빙 / 연예뉴스 + IT·AI·신제품 트렌드 종합</div>
@@ -172,6 +188,28 @@
   </div></div>
 </section>
 
+<section id="skill">
+  <div class="sec-head"><span class="dot" style="background:var(--skill)"></span><h2>🧭 처세·리더십·일잘러</h2></div>
+  <div class="sec-sub">보고서·회의·생산성·리더십·처세 / 일 잘하는 법 블로그 소재</div>
+  <div class="chips" id="c-skill"></div>
+  <div class="src"><h3>실시간 소스 바로가기</h3><div class="src-links">
+    <a href="https://search.naver.com/search.naver?where=blog&query=일잘러+업무스킬" target="_blank">일잘러(블로그)</a>
+    <a href="https://www.yes24.com/Product/Category/Display/001001025" target="_blank">자기계발·리더십 베스트셀러</a>
+    <a href="https://www.blind.kr/" target="_blank">블라인드</a>
+  </div></div>
+</section>
+
+<section id="software">
+  <div class="sec-head"><span class="dot" style="background:var(--software)"></span><h2>🧰 직장인 소프트웨어·AI툴</h2></div>
+  <div class="sec-sub">챗GPT·노션·엑셀·협업툴·AI 에이전트 / 업무 생산성 블로그 소재</div>
+  <div class="chips" id="c-software"></div>
+  <div class="src"><h3>실시간 소스 바로가기</h3><div class="src-links">
+    <a href="https://search.naver.com/search.naver?where=blog&query=직장인+업무+프로그램" target="_blank">업무 프로그램(블로그)</a>
+    <a href="https://www.producthunt.com/" target="_blank">Product Hunt</a>
+    <a href="https://www.notion.so/ko" target="_blank">노션</a>
+  </div></div>
+</section>
+
 <section id="desk">
   <div class="sec-head"><span class="dot" style="background:var(--desk)"></span><h2>🖥️ 컴퓨터 데스크테리어</h2></div>
   <div class="sec-sub">모니터암·키보드·거치대·선정리·홈오피스 / 데스크셋업 블로그 소재</div>
@@ -181,6 +219,18 @@
     <a href="https://ohou.se/search?query=데스크테리어" target="_blank">오늘의집 데스크</a>
     <a href="https://www.danawa.com/" target="_blank">다나와 IT</a>
     <a href="https://quasarzone.com/" target="_blank">퀘이사존</a>
+  </div></div>
+</section>
+
+<section id="acc">
+  <div class="sec-head"><span class="dot" style="background:var(--acc)"></span><h2>🖱️ 컴퓨터 악세사리</h2></div>
+  <div class="sec-sub">키보드·마우스·헤드셋·SSD·모니터 등 PC 주변기기 / 리뷰 블로그 소재</div>
+  <div class="chips" id="c-acc"></div>
+  <div class="src"><h3>실시간 소스 바로가기</h3><div class="src-links">
+    <a href="https://www.coupang.com/np/categories/186764" target="_blank">쿠팡 PC 주변기기</a>
+    <a href="https://www.danawa.com/" target="_blank">다나와</a>
+    <a href="https://quasarzone.com/" target="_blank">퀘이사존</a>
+    <a href="https://search.naver.com/search.naver?where=blog&query=컴퓨터+악세사리+추천" target="_blank">악세사리(블로그)</a>
   </div></div>
 </section>
 
@@ -220,7 +270,16 @@ function chips(arr){
       `<a class="b" href="https://search.naver.com/search.naver?where=blog&query=${q}" target="_blank">블</a></span>`;
   }).join("");
 }
-function setChips(id, arr){ document.getElementById(id).innerHTML = chips(arr); }
+function setChips(id, arr){ const el=document.getElementById(id); if(el) el.innerHTML = chips(arr); }
+function setCoupang(arr){
+  const el=document.getElementById('c-coupang'); if(!el) return;
+  el.innerHTML = (arr||[]).map((k,i)=>{
+    const q = encodeURIComponent(String(k).replace(/\(.*?\)|·.*$/g,'').trim()||k);
+    return `<span class="chip"><span class="rank">${i+1}</span>`+
+      `<a href="https://www.coupang.com/np/search?q=${q}" target="_blank">${k}</a>`+
+      `<a class="b" href="https://search.naver.com/search.naver?where=blog&query=${q}+추천" target="_blank">블</a></span>`;
+  }).join("");
+}
 
 function renderAge(age){
   const order = ["10대","20대","30대","40대","50대","60대+"];
@@ -240,7 +299,9 @@ function renderData(d){
   elGen.textContent = (d.date||'') + (d.generated?(' ('+d.generated+')'):'');
   setChips('c-news', s.news); setChips('c-comm', s.comm);
   setChips('c-shop', s.shop); setChips('c-ent', s.ent);
-  setChips('c-office', s.office); setChips('c-desk', s.desk);
+  setChips('c-office', s.office); setChips('c-skill', s.skill);
+  setChips('c-software', s.software); setChips('c-desk', s.desk);
+  setChips('c-acc', s.acc); setCoupang(s.coupang);
   renderAge(s.age); renderMag(s.magazine);
 }
 
