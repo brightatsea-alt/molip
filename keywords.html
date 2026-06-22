@@ -9,7 +9,7 @@
   :root{
     --bg:#0f1115; --card:#171a21; --card2:#1d212b; --line:#2a2f3a;
     --txt:#e8eaed; --sub:#9aa3b2; --accent:#3ea6ff; --chip:#222732;
-    --news:#ff6b6b; --comm:#ffd166; --shop:#06d6a0; --ent:#b692ff;
+    --news:#ff6b6b; --comm:#ffd166; --shop:#06d6a0; --ent:#b692ff; --age:#4dd0e1;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);
@@ -50,6 +50,10 @@
     background:transparent;border:1px solid var(--line);border-radius:8px;padding:5px 9px}
   .src-links a:hover{color:var(--accent);border-color:var(--accent)}
   footer{margin-top:34px;color:var(--sub);font-size:11.5px;text-align:center;line-height:1.7}
+  .agegrp{margin-top:14px}
+  .agegrp:first-child{margin-top:4px}
+  .agelabel{display:inline-block;font-size:12px;font-weight:800;color:#0f1115;
+    background:var(--age);border-radius:7px;padding:2px 9px;margin-bottom:8px}
   @media(max-width:560px){header h1{font-size:19px}.chip{font-size:13px}}
 </style>
 </head>
@@ -70,6 +74,7 @@
   <a href="#comm">🔥 커뮤니티</a>
   <a href="#shop">🛍️ 쇼핑·소비</a>
   <a href="#ent">🎬 연예·동영상·IT</a>
+  <a href="#age">👥 연령대별</a>
 </nav>
 
 <!-- ============ 뉴스·시사 ============ -->
@@ -148,6 +153,22 @@
   </div>
 </section>
 
+<!-- ============ 연령대별 ============ -->
+<section id="age">
+  <div class="sec-head"><span class="dot" style="background:var(--age)"></span><h2>👥 연령대별 인기 키워드 (블로그 소재)</h2></div>
+  <div class="sec-sub">날짜 기준 트렌드 × 연령 타깃 · 각 연령대가 블로그·검색에서 가장 많이 찾는 소재 (10대~60대+)</div>
+  <div id="ageboard"></div>
+  <div class="src">
+    <h3>연령별 실시간 데이터 바로가기</h3>
+    <div class="src-links">
+      <a href="https://datalab.naver.com/keyword/trendSearch.naver" target="_blank">네이버 데이터랩 검색어트렌드(연령별)</a>
+      <a href="https://datalab.naver.com/shoppingInsight/sCategory.naver" target="_blank">쇼핑인사이트 연령·성별</a>
+      <a href="https://some.co.kr/" target="_blank">썸트렌드(연령 분석)</a>
+      <a href="https://trends.google.co.kr/trending?geo=KR" target="_blank">구글 트렌드 KR</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   블로그 소재 발굴용 트렌드 키워드 보드 · 키워드는 네이버 검색 API 기반 스냅샷이며, 실시간 변동은 각 섹션의 "실시간 소스 바로가기"에서 확인하세요.<br>
   GitHub Pages 호스팅 · 갱신을 원하면 Claude에게 "키워드 보드 업데이트"라고 요청하세요.
@@ -176,6 +197,26 @@ render("c-news", data.news);
 render("c-comm", data.comm);
 render("c-shop", data.shop);
 render("c-ent", data.ent);
+
+// ===== 연령대별 인기 키워드 (날짜 기준 트렌드 × 연령 타깃) =====
+const ageData = [
+  ["10대", ["참교육 넷플릭스","아이돌(아일릿·투바투)","숏폼 챌린지","로블록스 게임","토이스토리5","공부법·내신","탕후루·디저트","웹툰 추천","키링·인형뽑기","다이어트 운동"]],
+  ["20대", ["무신사 추천템","연애실험실","취업·자소서","워킹패드 홈트","페스티벌·콘서트","다이소 꾸미기","무지출 챌린지","백패킹 여행","캡슐커피","짠테크 앱테크"]],
+  ["30대", ["청약·내집마련","스토케 유모차 육아","이직·연봉","오늘의집 인테리어","주식·ETF","캠핑·차박","K뷰티 스킨케어","골프 입문","맛집·홈카페","반려동물"]],
+  ["40대", ["자녀 교육·학원","부동산 세금","건강검진","전기차 구매","노후·연금 준비","등산·러닝","다이어트 식단","재테크 포트폴리오","부모님 선물","골프 라운딩"]],
+  ["50대", ["탈모약 건보 적용","임영웅 산골총각","건강(혈압·관절)","여행상품·패키지","연금·종신보험","전원주택·귀촌","등산·둘레길","손주 용돈","한방·홍삼","트로트 콘서트"]],
+  ["60대+", ["임영웅·트로트","효도여행","건강식품·영양제","연금·노후자금","텃밭·원예","산악회 모임","실버 유튜브","손주 선물","무릎·관절 관리","종교·교양"]]
+];
+const ageBox = document.getElementById("ageboard");
+ageBox.innerHTML = ageData.map(([label, arr])=>{
+  const chips = arr.map((k,i)=>{
+    const q = encodeURIComponent(k.replace(/\(.*?\)|·.*$/g,'').trim()||k);
+    return `<span class="chip"><span class="rank">${i+1}</span>`+
+      `<a href="https://search.naver.com/search.naver?query=${q}" target="_blank">${k}</a>`+
+      `<a class="b" href="https://search.naver.com/search.naver?where=blog&query=${q}" target="_blank">블</a></span>`;
+  }).join("");
+  return `<div class="agegrp"><span class="agelabel">${label}</span><div class="chips">${chips}</div></div>`;
+}).join("");
 </script>
 </body>
 </html>
